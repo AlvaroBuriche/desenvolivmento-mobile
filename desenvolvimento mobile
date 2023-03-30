@@ -1,0 +1,182 @@
+import * as React from "react";
+import {
+  View,
+  Text,
+  StyleSheet,
+  Image,
+  TextInput,
+  Button,
+  ScrollView,
+  SafeAreaView,
+  TouchableOpacity,
+} from "react-native";
+import { AntDesign } from "@expo/vector-icons";
+import { FontAwesome } from "@expo/vector-icons";
+import { Ionicons } from "@expo/vector-icons";
+
+export default function App() {
+  let disciplina = "Desenvolvimento Mobile ";
+  let Instragram = "";
+
+  return (
+    <SafeAreaView style={styles.container}>
+      <ScrollView>
+        <View>
+          <Text style={styles.saudacao}> React Native </Text>
+          <Text style={styles.disciplina}>
+            {""} {disciplina}
+          </Text>
+          <Text style={styles.textos}>Alvaroburiche {Instragram} </Text>
+          <Image
+            style={styles.imagem}
+            source={{ uri: "https://github.com/AlvaroBuriche.png" }}
+          />
+          <Image
+            style={styles.imagem2}
+            source={{
+              uri: "https://i.fogaonet.com/crop/rs:fill:795:448:0/g:ce/plain/wp-content/uploads/2022/02/51904074133-62198a3c4d-o-scaled.jpg",
+            }}
+          />
+        </View>
+
+        <View>
+          <View style={{ flexDirection: "row", flexWrap: "wrap" }}>
+            <Text>
+              {" "}
+              <AntDesign name="hearto" size={25} color="black" />{" "}
+            </Text>{" "}
+            <FontAwesome name="comment-o" size={25} color="black" />{" "}
+            <Text>
+              {" "}
+              <Ionicons name="md-share-outline" size={25} color="black" />{" "}
+            </Text>
+          </View>
+
+          <View>
+            <Text style={styles.legenda} backgroundColor="black">
+              alvaroburiche: {Instragram}
+            </Text>
+
+            <Text style={styles.comentarios2}>
+              {"Sua estrela solitaria me conduz ♪"}
+            </Text>
+
+            <Text style={styles.comentarios}>
+              Ver todos os comentários {Instragram}
+              {""}
+            </Text>
+          </View>
+
+          <View>
+            <TextInput
+              style={styles.textoInput}
+              placeholder="Digite seu nome:"
+              placeholderTextColor="black"
+            />
+
+            <TextInput
+              style={styles.textoInput}
+              placeholder="Digite sua idade:"
+              keyboardType="numeric"
+              placeholderTextColor="black"
+            />
+
+            <TextInput
+              style={styles.textoInput}
+              placeholder="Digite seu hoby:"
+              keyboardType="numeric"
+              placeholderTextColor="black"
+            />
+
+            <View>
+              <Button
+                title="Resultado"
+                color=""
+                onPress={() => alert("Você é bom mesmo!!!")}
+              />
+            </View>
+          </View>
+        </View>
+      </ScrollView>
+    </SafeAreaView>
+  );
+}
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: "gray",
+    alignItems: "center",
+  },
+
+  legenda: {
+    backgroundColor: "",
+    marginTop: "",
+    fontSize: 15,
+    color: "black",
+    fontWeight: "bold",
+  },
+
+  saudacao: {
+    marginTop: 20,
+    fontSize: 30,
+    alignSelf: "center",
+    color: "black",
+    fontWeight: "bold",
+  },
+
+  textos: {
+    marginTop: 10,
+    fontSize: 15,
+    alignSelf: "start",
+    color: "black",
+    fontWeight: "bold",
+  },
+
+  comentarios: {
+    marginTop: 10,
+    fontSize: 15,
+    alignSelf: "",
+    color: "black",
+    fontWeight: "bold",
+  },
+
+  comentarios2: {
+    marginTop: 1,
+    fontSize: 15,
+    alignSelf: "",
+    color: "black",
+    fontWeight: "",
+  },
+  disciplina: {
+    fontSize: 27,
+    alignSelf: "center",
+    color: "white",
+    padding: 3,
+    fontStyle: "italic",
+  },
+
+  imagem: {
+    margin: 5,
+    width: 40,
+    height: 40,
+    borderRadius: 20,
+    alignSelf: "",
+    marginBottom: 10,
+  },
+
+  imagem2: {
+    width: "100%",
+    height: 350,
+  },
+
+  textoInput: {
+    height: 25,
+    alignSelf: "center",
+    margin: 4,
+    borderWidth: 1,
+    padding: 5,
+    color: "black",
+    fontSize: 20,
+  },
+});
